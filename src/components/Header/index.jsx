@@ -17,13 +17,13 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-juicy-blue-space-light fixed w-full text-white z-10">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+    <header className="bg-primary-dark fixed w-full text-white z-50 shadow-md">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
         <Link to="home" smooth={true} duration={500} className="-m-1.5 p-1.5 cursor-pointer">
           <span className="sr-only">CEED</span>
           <img
-            className="h-8 w-auto"
+            className="h-10 w-auto"
             src={LogoHeader}
             alt="Logo Header"
           />
@@ -40,23 +40,23 @@ export default function Header() {
           </button>
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
-          <Link to="home" smooth={true} duration={500} className="text-sm font-semibold leading-6 cursor-pointer">Início</Link>
-          <Link to="about" smooth={true} duration={500} className="text-sm font-semibold leading-6 cursor-pointer">Sobre</Link>
-          <Link to="structure" smooth={true} duration={500} className="text-sm font-semibold leading-6 cursor-pointer">Estrutura</Link>
-          <Link to="contact" smooth={true} duration={500} className="text-sm font-semibold leading-6 cursor-pointer">Contato</Link>
+          <Link to="home" smooth={true} duration={500} className="text-sm font-semibold leading-6 cursor-pointer hover:text-secondary-light transition-colors">Início</Link>
+          <Link to="about" smooth={true} duration={500} className="text-sm font-semibold leading-6 cursor-pointer hover:text-secondary-light transition-colors">Sobre</Link>
+          <Link to="structure" smooth={true} duration={500} className="text-sm font-semibold leading-6 cursor-pointer hover:text-secondary-light transition-colors">Estrutura</Link>
+          <Link to="contact" smooth={true} duration={500} className="text-sm font-semibold leading-6 cursor-pointer hover:text-secondary-light transition-colors">Contato</Link>
         </Popover.Group>
       </nav>
       <Dialog as="div" className="lg:hidden" open={isExpanded} onClose={toggleNavbar}>
         <div className="fixed inset-0 z-10" />
         <Dialog.Panel
           focus="true"
-          className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-juicy-blue-space-light px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+          className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-primary-dark px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
         >
           <div className="flex items-center justify-between">
           <Link to="home" smooth={true} duration={500} className="-m-1.5 p-1.5 cursor-pointer">
             <span className="sr-only">CEED</span>
             <img
-              className="h-8 w-auto"
+              className="h-10 w-auto"
               src={LogoHeader}
               alt="Logo Header"
             />
@@ -73,15 +73,16 @@ export default function Header() {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6 text-center">
-                <Link to="home" smooth={true} duration={500} className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-gray-600" onClick={toggleNavbar}>Início</Link>
-                <Link to="about" smooth={true} duration={500} className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-gray-600" onClick={toggleNavbar}>Sobre</Link>
-                <Link to="structure" smooth={true} duration={500} className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-gray-600" onClick={toggleNavbar}>Estrutura</Link>
-                <Link to="contact" smooth={true} duration={500} className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-gray-600" onClick={toggleNavbar}>Contato</Link>
+                <Link to="home" smooth={true} duration={500} className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-white hover:bg-secondary-light hover:text-white transition-all" onClick={toggleNavbar}>Início</Link>
+                <Link to="about" smooth={true} duration={500} className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-white hover:bg-secondary-light hover:text-white transition-all" onClick={toggleNavbar}>Sobre</Link>
+                <Link to="structure" smooth={true} duration={500} className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-white hover:bg-secondary-light hover:text-white transition-all" onClick={toggleNavbar}>Estrutura</Link>
+                <Link to="contact" smooth={true} duration={500} className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-white hover:bg-secondary-light hover:text-white transition-all" onClick={toggleNavbar}>Contato</Link>
               </div>
             </div>
           </div>
         </Dialog.Panel>
       </Dialog>
     </header>
+
   )
 }

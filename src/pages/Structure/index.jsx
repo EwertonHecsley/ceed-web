@@ -1,73 +1,45 @@
 import React from 'react';
-import bg from '../../assets/images/bg-about.png';
-import CardsGallery from './CardsGallery'
+import { motion } from 'framer-motion';
+import CardsGallery from './CardsGallery';
 
 export default function Structure() {
   return (
-    <div id="structure" className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-16">
-      <img
-        src={bg}
-        alt=""
-        className="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center"
-      />
-      <svg
-        viewBox="0 0 1097 845"
-        aria-hidden="true"
-        className="hidden transform-gpu blur-3xl sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:w-[68.5625rem]"
-      >
-        <path
-          fill="url(rgb(20, 99, 150)-9d81-43d2-bb94-866e98dd6e42)"
-          fillOpacity=".2"
-          d="M301.174 646.641 193.541 844.786 0 546.172l301.174 100.469 193.845-356.855c1.241 164.891 42.802 431.935 199.124 180.978 195.402-313.696 143.295-588.18 284.729-419.266 113.148 135.13 124.068 367.989 115.378 467.527L811.753 372.553l20.102 451.119-530.681-177.031Z"
-        />
-        <defs>
-          <linearGradient
-            id="10724532-9d81-43d2-bb94-866e98dd6e42"
-            x1="1097.04"
-            x2="-141.165"
-            y1=".22"
-            y2="363.075"
-            gradientUnits="userSpaceOnUse"
+    <div id="structure" className="relative bg-primary-dark py-24 overflow-hidden">
+      {/* Decorative SVG/Shapes could go here, but let's keep it clean with dominance of dark blue */}
+      <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+        <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-secondary-light rounded-full blur-[150px]"></div>
+        <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-accent-yellow rounded-full blur-[150px] opacity-20"></div>
+      </div>
+
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-16">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold text-white mb-4"
           >
-            <stop stopColor="rgb(20, 99, 150)" />
-          </linearGradient>
-        </defs>
-      </svg>
-      <svg
-        viewBox="0 0 1097 845"
-        aria-hidden="true"
-        className="absolute left-1/2 -top-52 -z-10 w-[68.5625rem] -translate-x-1/2 transform-gpu blur-3xl sm:top-[-28rem] sm:ml-16 sm:translate-x-0"
-      >
-        <path
-          fill="url(#8ddc7edb-8983-4cd7-bccb-79ad21097d70)"
-          fillOpacity=".2"
-          d="M301.174 646.641 193.541 844.786 0 546.172l301.174 100.469 193.845-356.855c1.241 164.891 42.802 431.935 199.124 180.978 195.402-313.696 143.295-588.18 284.729-419.266 113.148 135.13 124.068 367.989 115.378 467.527L811.753 372.553l20.102 451.119-530.681-177.031Z"
-        />
-        <defs>
-          <linearGradient
-            id="8ddc7edb-8983-4cd7-bccb-79ad21097d70"
-            x1="1097.04"
-            x2="-141.165"
-            y1=".22"
-            y2="363.075"
-            gradientUnits="userSpaceOnUse"
+            Nossa <span className="text-accent-yellow">Estrutura</span>
+          </motion.h2>
+          <motion.div 
+            initial={{ width: 0 }}
+            whileInView={{ width: "80px" }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="h-1.5 bg-secondary-light mx-auto rounded-full mb-8"
+          ></motion.div>
+          <motion.p 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            className="text-xl text-gray-300 max-w-3xl mx-auto"
           >
-            <stop stopColor="rgb(20, 99, 150)" />
-            <stop offset={1} stopColor="rgb(46, 172, 255)" />
-          </linearGradient>
-        </defs>
-      </svg>
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:mx-0">
-          <h1 className="my-2 text-5xl font-bold leading-tight text-left text-title-blue">
-            <span className="text-white">|</span> Estrutura</h1>
-          <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
-          <h4 className="text-3xl text-title-blue font-bold leading-none mb-3">
-            Conheça onde os pequenos exploram o <span className="text-yellow-500">aprendizado</span> e a
-            <span className="text-yellow-500"> criatividade</span>.
-          </h4>
+            Oferecemos um ambiente seguro, moderno e estimulante, projetado para potencializar o aprendizado e a criatividade dos nossos alunos.
+          </motion.p>
         </div>
-        <section>
+
+        <section className="mt-12">
           <CardsGallery />
         </section>
       </div>
