@@ -5,9 +5,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Outfit', 'sans-serif'],
+      },
       colors: {
-        'juicy-blue-space-light': 'rgb(20, 99, 150)',
-        'title-blue': 'rgb(20, 99, 150)',
+
+        'primary-dark': '#002855', // Deep dark blue
+        'secondary-light': '#00a8e8', // Light blue
+        'accent-yellow': '#FFD700', // Yellow/Gold
+        'neutral-white': '#FFFFFF',
       },
       backgroundImage: {
         'body-stars': "url('/public/bg/body-stars.svg')",

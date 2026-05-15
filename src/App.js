@@ -1,15 +1,11 @@
 import React from 'react';
-// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import {
   Header,
   Home,
   About,
-  // Team,
   Structure,
-  // Depositions,
-  // Contact,
-  // Footer,
+  Contact,
 } from './pages';
 import Footer from './components/Footer';
 
@@ -21,16 +17,8 @@ function App() {
         <main className="flex-grow">
           <Home />
           <About />
-          {/* <Team /> */}
           <Structure />
-          {/* <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/team" element={<Team />} />
-            <Route path="/structure" element={<Structure />} />
-            <Route path="/depositions" element={<Depositions />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes> */}
+          <Contact />
         </main>
         <Footer />
       </div>
@@ -39,3 +27,4 @@ function App() {
 }
 
 export default App;
+
